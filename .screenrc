@@ -1,0 +1,10 @@
+escape "^Oo"
+
+defscrollback 10000
+bind k kill
+#defbce on
+#term xterm-256color
+autodetach on
+shelltitle "$ |zsh"
+hardstatus alwayslastline "%`%-w%{=b bw}%n %t%{-}%+w"
+shell $SHELL

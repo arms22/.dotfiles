@@ -1,0 +1,40 @@
+[color]
+    ui = true
+
+[core]
+    editor = emacs
+
+[alias]
+    st = status -uno
+    sh = show
+    so = remote show origin
+    ft = fetch
+    ci = commit -v
+    co = checkout
+    aa = add --all
+    ap = add --patch
+
+    # branch
+    br = branch
+    ba = branch -a
+    bm = branch --merged
+    bn = branch --no-merged
+
+    # log
+    wc = whatchanged
+    ls = log --stat
+    lp = log -p
+    lr = log origin
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
+    # diff
+    df = diff
+    dc = diff --cached
+    ds = diff --staged
+
+    # grep
+    gr = grep
+    gr = grep -n
+
+[include]
+    path = ~/.gitconfig.local
