@@ -98,3 +98,10 @@
   (setq dired-file-coding-system coding-system)
   (dired-map-over-marks-check
    (function dired-convert-coding-system) arg 'convert-coding-system t))
+
+;;; .svnをigrepから除外
+(setq igrep-find t
+      igrep-find-prune-clause
+      (format "-type d %s -name RCS -o -name CVS -o -name SCCS -o -name .svn %s"
+	      (shell-quote-argument "(")
+	      (shell-quote-argument ")")))
