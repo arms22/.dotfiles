@@ -3,7 +3,7 @@
 
 [core]
     editor = emacs
-    pager = nkf -e | less
+    pager = nkf -e | less -x4
 
 [alias]
     st = status -uno

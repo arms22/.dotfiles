@@ -105,3 +105,6 @@
       (format "-type d %s -name RCS -o -name CVS -o -name SCCS -o -name .svn %s"
 	      (shell-quote-argument "(")
 	      (shell-quote-argument ")")))
+
+;;; tab 4
+(setq default-tab-width 4)
