@@ -3,7 +3,9 @@
 
 [core]
     editor = emacs
-    pager = nkf -e | less -x4
+    pager = nkf -w | less -x4
+    quotepath = false
+    whitespace = cr-at-eol
 
 [alias]
     st = status -uno

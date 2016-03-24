@@ -25,6 +25,9 @@
       (append '("~/.emacs.d/elisp")
               load-path))
 
+;;
+(setq enable-recursive-minibuffers t)
+
 ;; dired-x
 (require 'dired-x)
 
@@ -38,6 +41,22 @@
 ;; moccur-edit
 ;;(require 'moccur-edit)
 
+;; igrep
+(autoload 'igrep "igrep"
+  "*Run `grep` PROGRAM to match REGEX in FILES..." t)
+(autoload 'igrep-find "igrep"
+  "*Run `grep` via `find`..." t)
+(autoload 'igrep-visited-files "igrep"
+  "*Run `grep` ... on all visited files." t)
+(autoload 'dired-do-igrep "igrep"
+  "*Run `grep` on the marked (or next prefix ARG) files." t)
+(autoload 'dired-do-igrep-find "igrep"
+  "*Run `grep` via `find` on the marked (or next prefix ARG) directories." t)
+(autoload 'Buffer-menu-igrep "igrep"
+  "*Run `grep` on the files visited in buffers marked with '>'." t)
+(autoload 'igrep-insinuate "igrep"
+  "Define `grep' aliases for the corresponding `igrep' commands." t)
+
 ;; for dired
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 (define-key dired-mode-map "j" 'dired-jump)
@@ -50,12 +69,14 @@
 (global-set-key "\M-^" 'next-error)
 (global-set-key "\M-\\" 'previous-error)
 (global-set-key "\M- " 'dabbrev-expand)
-(global-set-key [f1] 'describe-bindings)
-(global-set-key [f2] 'comment-region)
-(global-set-key [f3] 'igrep-find)
-;;(global-set-key [f4] 'moccur)
-(global-set-key [f5] 'align)
-(global-set-key [f6] 'imenu)
+;; (global-set-key [f1] 'describe-bindings)
+;; (global-set-key [f2] 'comment-region)
+;; (global-set-key [f3] 'igrep-find)
+;; (global-set-key [f4] 'moccur)
+;; (global-set-key [f5] 'align)
+;; (global-set-key [f6] 'imenu)
+(global-set-key "\C-c\C-g" 'igrep-find)
+(global-set-key "\C-c\C-f" 'imenu)
 
 ;;; dired を使って、一気にファイルの coding system (漢字) を変換する
 ;; m でマークして T で一括変換
